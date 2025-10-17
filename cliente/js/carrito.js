@@ -27,4 +27,5 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.removeItem('carrito');
     window.location.reload();
   });
-});
+  const cantidadProductos = document.getElementById ('acumulador');
+  cantidadProductos.innerHTML = 

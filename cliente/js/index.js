@@ -1,8 +1,11 @@
 document.addEventListener('DOMContentLoaded', async () => {
-  const contenedor = document.getElementById('contenedor-productos');
-  const productos = await obtenerProductos();
+  const contenedor = document.getElementById('nuevo container text-center');
+  const productos = await obtenerProductos(); 
 
-  productos.forEach(p => {
+let i =0;
+ for (const p of productos) {
+        if (i >= 3) break;
+
     const card = document.createElement('div');
     card.className = "col-md-4";
     card.innerHTML = `
@@ -19,13 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       </div>
     `;
     contenedor.appendChild(card);
-//Ejercicio 2, poner estilos 
-    const imagen=card.querySelector('.imagen-nueva');
-    imagen.style.height='200px';
-    imagen.style.width='150px';
 
-    const estiloClase= card.querySelector('.card-title');
-    estiloClase.style.backgroundColor='red';
-  });
-  
-});
+    i++;
+ };
+ });
